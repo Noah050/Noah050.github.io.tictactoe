@@ -211,7 +211,7 @@ function load() {
         gameEnd = true;
           if (player2WinLock == 0) {
         player2Wins += 1;
-        player1WinLock = 1;
+        player2WinLock = 1;
           }
      } 
      else if (n1 != 0 && n2 != 0 && n3 != 0 && n4 != 0 && n5 != 0 && n6 != 0 && n7 != 0 && n8 != 0 && n9 != 0) {
