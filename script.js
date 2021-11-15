@@ -42,6 +42,8 @@ function load() {
     var turn = i % 2;
     var player1Wins = 0;
     var player2Wins = 0;
+    var player1WinLock = 0;
+    var player2WinLock = 0;
     function reset() {
         i = 0;
         n1 = 0;
@@ -55,6 +57,8 @@ function load() {
         n9 = 0;
         gameEnd = false;
         turn = i % 2;
+        player1WinLock = 0;
+        player2WinLock = 0;
         document.querySelector(".square1").style.backgroundImage = "none";
         document.querySelector(".square2").style.backgroundImage = "none";
         document.querySelector(".square3").style.backgroundImage = "none";
@@ -197,12 +201,18 @@ function load() {
      if (n1 == 1 && n2 == 1 && n3 == 1 || n4 == 1 && n5 == 1 && n6 == 1 || n7 == 1 && n8 == 1 && n9 == 1 || n1 == 1 && n4 == 1 && n7 == 1 || n2 == 1 && n5 == 1 && n8 == 1 || n3 == 1 && n6 == 1 && n9 == 1 || n1 == 1 && n5 == 1 && n9 == 1 || n3 == 1 && n5 == 1 && n7 == 1) {
         document.querySelector(".playerTurn").innerHTML = "Player 1 (X) Has Won";
         gameEnd = true;
+         if (player1WinLock == 0) {
         player1Wins += 1;
+        player1WinLock = 1;
+         }
         }   
       else if (n1 == 2 && n2 == 2 && n3 == 2 || n4 == 2 && n5 == 2 && n6 == 2 || n7 == 2 && n8 == 2 && n9 == 2 || n1 == 2 && n4 == 2 && n7 == 2 || n2 == 2 && n5 == 2 && n8 == 2 || n3 == 2 && n6 == 2 && n9 == 2 || n1 == 2 && n5 == 2 && n9 == 2 || n3 == 2 && n5 == 2 && n7 == 2) {
         document.querySelector(".playerTurn").innerHTML = "Player 2 (O) Has Won"
         gameEnd = true;
+          if (player2WinLock == 0) {
         player2Wins += 1;
+        player1WinLock = 1;
+          }
      } 
      else if (n1 != 0 && n2 != 0 && n3 != 0 && n4 != 0 && n5 != 0 && n6 != 0 && n7 != 0 && n8 != 0 && n9 != 0) {
         document.querySelector(".playerTurn").innerHTML = "It's A Draw"
