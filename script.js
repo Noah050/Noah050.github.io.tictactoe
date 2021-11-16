@@ -28,6 +28,8 @@ function load() {
     document.querySelector(".square8").addEventListener("click", winCondition);
     document.querySelector(".square9").addEventListener("click", winCondition);
     document.querySelector(".reset").addEventListener("click", reset);
+    document.querySelector("#p1Color").addEventListener("change", p1Color);
+    document.querySelector("#p2Color").addEventListener("change", p2Color);
     var i = 0;
     var n1 = 0;
     var n2 = 0;
@@ -44,6 +46,22 @@ function load() {
     var player2Wins = 0;
     var player1WinLock = 0;
     var player2WinLock = 0;
+    function p1Color() {
+      var c1 = document.querySelector("#p1Color").value;
+      var x, i;
+      x = document.querySelectorAll(".bx-x");
+      for (i = 0; i < x.length; i++) {
+      x[i].style.color = c1;
+        }
+    }   
+    function p2Color() {
+        var c2 = document.querySelector("#p2Color").value;
+        var x, i;
+        x = document.querySelectorAll(".bx-circle");
+        for (i = 0; i < x.length; i++) {
+        x[i].style.color = c2;
+          }
+      } 
     function reset() {
         i = 0;
         n1 = 0;
@@ -59,18 +77,14 @@ function load() {
         turn = i % 2;
         player1WinLock = 0;
         player2WinLock = 0;
-        document.querySelector(".square1").style.backgroundImage = "none";
-        document.querySelector(".square2").style.backgroundImage = "none";
-        document.querySelector(".square3").style.backgroundImage = "none";
-        document.querySelector(".square4").style.backgroundImage = "none";
-        document.querySelector(".square5").style.backgroundImage = "none";
-        document.querySelector(".square6").style.backgroundImage = "none";
-        document.querySelector(".square7").style.backgroundImage = "none";
-        document.querySelector(".square8").style.backgroundImage = "none";
-        document.querySelector(".square9").style.backgroundImage = "none";
+        var x, l;
+        x = document.getElementsByTagName("i");
+        for (l = 0; l < x.length; l++) {
+            x[l].style.fontSize = "0px";
+        }
         document.querySelector(".playerTurn").innerHTML = "It's Player 1's Turn (X)";
-        document.querySelector(".player1Wins").innerHTML = "Player 1 (X) Has " + player1Wins + " " + "Wins";
-        document.querySelector(".player2Wins").innerHTML = "Player 2 (O) Has " + player2Wins + " " + "Wins";
+        document.querySelector(".player1Wins").innerHTML = player1Wins + " " + "Wins";
+        document.querySelector(".player2Wins").innerHTML = player2Wins + " " + "Wins";
         
     }
     function player() {
@@ -82,12 +96,12 @@ function load() {
     }
     function square1() {
        if (turn == 0 && gameEnd != true && n1 == 0) {
-           document.querySelector(".square1").style.backgroundImage = "url(Tic-Tac-Toe-X.png)";
+           document.querySelector(".x1").style.fontSize = "110px";
            i++;
            turn = i % 2;
            n1 = 1;
        } else if (turn == 1 && gameEnd != true && n1 == 0) {
-           document.querySelector(".square1").style.backgroundImage = "url(Tic-Tac-Toe-O.png)";
+           document.querySelector(".o1").style.fontSize = "85px";
            i++;
            turn = i % 2;
            n1 = 2;
@@ -95,12 +109,12 @@ function load() {
     }
     function square2() {
         if (turn == 0 && gameEnd != true && n2 == 0) {
-            document.querySelector(".square2").style.backgroundImage = "url(Tic-Tac-Toe-X.png)";
+            document.querySelector(".x2").style.fontSize = "110px";
             i++;
             turn = i % 2;
             n2 = 1;
         } else if (turn == 1 && gameEnd != true && n2 == 0) {
-            document.querySelector(".square2").style.backgroundImage = "url(Tic-Tac-Toe-O.png)";
+            document.querySelector(".o2").style.fontSize = "85px";
             i++;
             turn = i % 2;
             n2 = 2;
@@ -108,12 +122,12 @@ function load() {
      }
      function square3() {
         if (turn == 0 && gameEnd != true && n3 == 0) {
-            document.querySelector(".square3").style.backgroundImage = "url(Tic-Tac-Toe-X.png)";
+            document.querySelector(".x3").style.fontSize = "110px";
             i++;
             turn = i % 2;
             n3 = 1;
         } else if (turn == 1 && gameEnd != true && n3 == 0) {
-            document.querySelector(".square3").style.backgroundImage = "url(Tic-Tac-Toe-O.png)";
+            document.querySelector(".o3").style.fontSize = "85px";
             i++;
             turn = i % 2;
             n3 = 2;
@@ -121,12 +135,12 @@ function load() {
      }
      function square4() {
         if (turn == 0 && gameEnd != true && n4 == 0) {
-            document.querySelector(".square4").style.backgroundImage = "url(Tic-Tac-Toe-X.png)";
+            document.querySelector(".x4").style.fontSize = "110px";
             i++;
             turn = i % 2;
             n4 = 1;
         } else if (turn == 1 && gameEnd != true && n4 == 0) {
-            document.querySelector(".square4").style.backgroundImage = "url(Tic-Tac-Toe-O.png)";
+            document.querySelector(".o4").style.fontSize = "85px";
             i++;
             turn = i % 2;
             n4 = 2;
@@ -134,12 +148,12 @@ function load() {
      }
      function square5() {
         if (turn == 0 && gameEnd != true && n5 == 0) {
-            document.querySelector(".square5").style.backgroundImage = "url(Tic-Tac-Toe-X.png)";
+            document.querySelector(".x5").style.fontSize = "110px";
             i++;
             turn = i % 2;
             n5 = 1;
         } else if (turn == 1 && gameEnd != true && n5 == 0) {
-            document.querySelector(".square5").style.backgroundImage = "url(Tic-Tac-Toe-O.png)";
+            document.querySelector(".o5").style.fontSize = "85px";
             i++;
             turn = i % 2;
             n5 = 2;
@@ -147,12 +161,12 @@ function load() {
      }
      function square6() {
         if (turn == 0 && gameEnd != true && n6 == 0) {
-            document.querySelector(".square6").style.backgroundImage = "url(Tic-Tac-Toe-X.png)";
+            document.querySelector(".x6").style.fontSize = "110px";
             i++;
             turn = i % 2;
             n6 = 1;
         } else if (turn == 1 && gameEnd != true && n6 == 0) {
-            document.querySelector(".square6").style.backgroundImage = "url(Tic-Tac-Toe-O.png)";
+            document.querySelector(".o6").style.fontSize = "85px";
             i++;
             turn = i % 2;
             n6 = 2;
@@ -160,12 +174,12 @@ function load() {
      }
      function square7() {
         if (turn == 0 && gameEnd != true && n7 == 0) {
-            document.querySelector(".square7").style.backgroundImage = "url(Tic-Tac-Toe-X.png)";
+            document.querySelector(".x7").style.fontSize = "110px";
             i++;
             turn = i % 2;
             n7 = 1;
         } else if (turn == 1 && gameEnd != true && n7 == 0) {
-            document.querySelector(".square7").style.backgroundImage = "url(Tic-Tac-Toe-O.png)";
+            document.querySelector(".o7").style.fontSize = "85px";
             i++;
             turn = i % 2;
             n7 = 2;
@@ -173,12 +187,12 @@ function load() {
      }
      function square8() {
         if (turn == 0 && gameEnd != true && n8 == 0) {
-            document.querySelector(".square8").style.backgroundImage = "url(Tic-Tac-Toe-X.png)";
+            document.querySelector(".x8").style.fontSize = "110px";
             i++;
             turn = i % 2;
             n8 = 1;
         } else if (turn == 1 && gameEnd != true && n8 == 0) {
-            document.querySelector(".square8").style.backgroundImage = "url(Tic-Tac-Toe-O.png)";
+            document.querySelector(".o8").style.fontSize = "85px";
             i++;
             turn = i % 2;
             n8 = 2;
@@ -186,12 +200,12 @@ function load() {
      }
      function square9() {
         if (turn == 0 && gameEnd != true && n9 == 0) {
-            document.querySelector(".square9").style.backgroundImage = "url(Tic-Tac-Toe-X.png)";
+            document.querySelector(".x9").style.fontSize = "110px";
             i++;
             turn = i % 2;
             n9 = 1;
         } else if (turn == 1 && gameEnd != true && n9 == 0) {
-            document.querySelector(".square9").style.backgroundImage = "url(Tic-Tac-Toe-O.png)";
+            document.querySelector(".o9").style.fontSize = "85px";
             i++;
             turn = i % 2;
             n9 = 2;
