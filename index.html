@@ -13,39 +13,39 @@
 <div class="body">
     <h1 class="playerTurn">It's Player 1's Turn (X)</h1>
     <div class="container">
-        <button class="box square1" type="button">
+        <button class="box square1" type="button" onclick="square1();winCondition()">
             <i class='x1 bx bx-x'></i>
             <i class='o1 bx circle bx-circle'></i>
         </button>
-        <button class="box square2" type="button">
+        <button class="box square2" type="button" onclick="square2();winCondition()">
             <i class='x2 bx bx-x'></i>
             <i class='o2 bx circle bx-circle'></i>
         </button>
-        <button class="box square3" type="button">
+        <button class="box square3" type="button" onclick="square3();winCondition()">
             <i class='x3 bx bx-x'></i>
             <i class='o3 bx circle bx-circle'></i>
         </button>
-        <button class="box square4" type="button">
+        <button class="box square4" type="button" onclick="square4();winCondition()">
             <i class='x4 bx bx-x'></i>
             <i class='o4 bx circle bx-circle'></i>
         </button>
-        <button class="box square5" type="button">
+        <button class="box square5" type="button" onclick="square5();winCondition()">
             <i class='x5 bx bx-x'></i>
             <i class='o5 bx circle bx-circle'></i>
         </button>
-        <button class="box square6" type="button">
+        <button class="box square6" type="button" onclick="square6();winCondition()">
             <i class='x6 bx bx-x'></i>
             <i class='o6 bx circle bx-circle'></i>
         </button>
-        <button class="box square7" type="button">
+        <button class="box square7" type="button" onclick="square7();winCondition()">
             <i class='x7 bx bx-x'></i>
             <i class='o7 bx circle bx-circle'></i>
         </button>
-        <button class="box square8" type="button">
+        <button class="box square8" type="button" onclick="square8();winCondition()">
             <i class='x8 bx bx-x'></i>
             <i class='o8 bx circle bx-circle'></i>
         </button>
-        <button class="box square9" type="button">
+        <button class="box square9" type="button" onclick="square9();winCondition()">
             <i class='x9 bx bx-x'></i>
             <i class='o9 bx circle bx-circle'></i>
         </button>
@@ -55,17 +55,17 @@
             <h2 class="p1Title">Player 1 (X)</h2>
                 <div class="subp1Div">
                     <h2 class="player1Wins">0 Wins</h2> 
-                    <input type="color" id="p1Color">
+                    <input type="color" id="p1Color" onchange="p1Color()">
                 </div>
         </div>
-        <button class="reset">
+        <button class="reset" type="button" onclick="reset()">
             Reset
         </button>
         <div class="p2Div">
             <h2 class="p2Title">Player 2 (O)</h2>
                 <div class="subp2Div">
                     <h2 class="player2Wins">0 Wins</h2>
-                    <input type="color" id="p2Color">
+                    <input type="color" id="p2Color" onchange="p2Color()">
                 </div>
         </div>
     </div>
