@@ -1,10 +1,5 @@
-window.onload = load;
 window.onload = firstTurn;
-function load() {
-    document.querySelector("#p1Color").addEventListener("change", p1Color);
-    document.querySelector("#p2Color").addEventListener("change", p2Color);   
-}
-    var i;
+    var turn;
     var n1 = 0;
     var n2 = 0;
     var n3 = 0;
@@ -23,28 +18,28 @@ function load() {
         if (gameEnd != true) {
         var ran = Math.random();
         if (ran <= .5) {
-            i = 1;
+            turn = 1;
             document.querySelector(".playerTurn").innerHTML = "It's Player 1's Turn (X)"; 
          } else {
-            i = 2;
+            turn = 2;
             document.querySelector(".playerTurn").innerHTML = "It's Player 2's Turn (O)";
         } 
     }
     }
     function p1Color() {
       var c1 = document.querySelector("#p1Color").value;
-      var x, l;
+      var x, i;
       x = document.querySelectorAll(".bx-x");
-      for (l = 0; l < x.length; l++) {
-      x[l].style.color = c1;
+      for (i = 0; i < x.length; i++) {
+      x[i].style.color = c1;
         }
     }   
     function p2Color() {
         var c2 = document.querySelector("#p2Color").value;
-        var x, l;
+        var x, i;
         x = document.querySelectorAll(".bx-circle");
-        for (l = 0; l < x.length; l++) {
-        x[l].style.color = c2;
+        for (i = 0; i < x.length; i++) {
+        x[i].style.color = c2;
           }
       } 
     function reset() {
@@ -61,111 +56,111 @@ function load() {
         n9 = 0;
         player1WinLock = 0;
         player2WinLock = 0;
-        var x, l;
+        var x, i;
         x = document.getElementsByTagName("i");
-        for (l = 0; l < x.length; l++) {
-            x[l].style.fontSize = "0px";
+        for (i = 0; i < x.length; i++) {
+            x[i].style.fontSize = "0px";
         }
         document.querySelector(".playerTurn").innerHTML = "It's Player 1's Turn (X)";
         document.querySelector(".player1Wins").innerHTML = player1Wins + " " + "Wins";
         document.querySelector(".player2Wins").innerHTML = player2Wins + " " + "Wins";
     }
     function square1() {
-       if (i == 1 && gameEnd != true && n1 == 0) {
+       if (turn == 1 && gameEnd != true && n1 == 0) {
            document.querySelector(".x1").style.fontSize = "110px";
-           i = 2;
+           turn = 2;
            n1 = 1;
-       } else if (i == 2 && gameEnd != true && n1 == 0) {
+       } else if (turn == 2 && gameEnd != true && n1 == 0) {
            document.querySelector(".o1").style.fontSize = "85px";
-           i = 1;
+           turn = 1;
            n1 = 2;
        }
     }
     function square2() {
-        if (i == 1 && gameEnd != true && n2 == 0) {
+        if (turn == 1 && gameEnd != true && n2 == 0) {
             document.querySelector(".x2").style.fontSize = "110px";
-            i = 2;
+            turn = 2;
             n2 = 1;
-        } else if (i == 2 && gameEnd != true && n2 == 0) {
+        } else if (turn == 2 && gameEnd != true && n2 == 0) {
             document.querySelector(".o2").style.fontSize = "85px";
-            i = 1;
+            turn = 1;
             n2 = 2;
         }
      }
      function square3() {
-        if (i == 1 && gameEnd != true && n3 == 0) {
+        if (turn == 1 && gameEnd != true && n3 == 0) {
             document.querySelector(".x3").style.fontSize = "110px";
-            i = 2;
+            turn = 2;
             n3 = 1;
-        } else if (i == 2 && gameEnd != true && n3 == 0) {
+        } else if (turn == 2 && gameEnd != true && n3 == 0) {
             document.querySelector(".o3").style.fontSize = "85px";
-            i = 1
+            turn = 1
             n3 = 2;
         }
      }
      function square4() {
-        if (i == 1 && gameEnd != true && n4 == 0) {
+        if (turn == 1 && gameEnd != true && n4 == 0) {
             document.querySelector(".x4").style.fontSize = "110px";
-            i = 2;
+            turn = 2;
             n4 = 1;
-        } else if (i == 2 && gameEnd != true && n4 == 0) {
+        } else if (turn == 2 && gameEnd != true && n4 == 0) {
             document.querySelector(".o4").style.fontSize = "85px";
-            i = 1;
+            turn = 1;
             n4 = 2;
         }
      }
      function square5() {
-        if (i == 1 && gameEnd != true && n5 == 0) {
+        if (turn == 1 && gameEnd != true && n5 == 0) {
             document.querySelector(".x5").style.fontSize = "110px";
-            i = 2;
+            turn = 2;
             n5 = 1;
-        } else if (i == 2 && gameEnd != true && n5 == 0) {
+        } else if (turn == 2 && gameEnd != true && n5 == 0) {
             document.querySelector(".o5").style.fontSize = "85px";
-            i = 1;
+            turn = 1;
             n5 = 2;
         }
      }
      function square6() {
-        if (i == 1 && gameEnd != true && n6 == 0) {
+        if (turn == 1 && gameEnd != true && n6 == 0) {
             document.querySelector(".x6").style.fontSize = "110px";
-            i = 2;
+            turn = 2;
             n6 = 1;
-        } else if (i == 2 && gameEnd != true && n6 == 0) {
+        } else if (turn == 2 && gameEnd != true && n6 == 0) {
             document.querySelector(".o6").style.fontSize = "85px";
-            i = 1;
+            turn = 1;
             n6 = 2;
         }
      }
      function square7() {
-        if (i == 1 && gameEnd != true && n7 == 0) {
+        if (turn == 1 && gameEnd != true && n7 == 0) {
             document.querySelector(".x7").style.fontSize = "110px";
-            i = 2;
+            turn = 2;
             n7 = 1;
-        } else if (i == 2 && gameEnd != true && n7 == 0) {
+        } else if (turn == 2 && gameEnd != true && n7 == 0) {
             document.querySelector(".o7").style.fontSize = "85px";
-            i = 1;
+            turn = 1;
             n7 = 2;
         }
      }
      function square8() {
-        if (i == 1 && gameEnd != true && n8 == 0) {
+        if (turn == 1 && gameEnd != true && n8 == 0) {
             document.querySelector(".x8").style.fontSize = "110px";
-            i = 2;
+            turn = 2;
             n8 = 1;
-        } else if (i == 2 && gameEnd != true && n8 == 0) {
+        } else if (turn == 2 && gameEnd != true && n8 == 0) {
             document.querySelector(".o8").style.fontSize = "85px";
-            i = 1;
+            turn = 1;
             n8 = 2;
         }
      }
      function square9() {
-        if (i == 1 && gameEnd != true && n9 == 0) {
+        if (turn == 1 && gameEnd != true && n9 == 0) {
             document.querySelector(".x9").style.fontSize = "110px";
-            i = 2;
+            turn = 2;
             n9 = 1;
-        } else if (i == 2 && gameEnd != true && n9 == 0) {
+        } else if (turn == 2 && gameEnd != true && n9 == 0) {
             document.querySelector(".o9").style.fontSize = "85px";
-            i = 1;
+            turn = 1;
             n9 = 2;
         }
      }
